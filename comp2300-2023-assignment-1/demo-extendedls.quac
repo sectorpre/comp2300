@@ -1,0 +1,9 @@
+MOVL R1, 10 @ (extended str and ldr test)
+MOVL R2, 30
+STR R1, [R2, RZ] @ str r1 at address in r2
+LDR R3, [R2, RZ] @ loads data in address at r2 into r3
+NOP 
+NOP 
+MOVL R3, 1 
+STR R1, [R2, R3] @ str r1 at address in (r2 + r3)
+LDR R4, [R2, RZ] @ loads data in address at (r2 + r3) into r4

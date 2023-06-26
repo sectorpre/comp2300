@@ -1,0 +1,13 @@
+MOVL R1, 10 @ (stack test)
+MOVL R2, 8
+PUSH R1
+CALL R2 @ Call function at address stored in R2
+POP R3 @ Get return value
+NOP
+NOP
+NOP 
+POP R3 @ POP R3 this is the return address (start of our function)
+POP R1 @ POP R1
+.word 0x8119 @ adds 1 to the value in R1
+PUSH R1 @ PUSH return value to stack
+.word 0x8730 @ changes PC counter back to PC = 5 (end of our function)

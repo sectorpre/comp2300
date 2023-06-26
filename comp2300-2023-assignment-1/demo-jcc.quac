@@ -1,0 +1,11 @@
+.word 0x8119 @ R1 := R1 + 1 (immedate values test)
+.word 0x821A @ R2 := R1 + 2
+.word 0x8321 @ R3 := R2 + R1
+NOP 
+NOP 
+MOVL R1, 5 @ moves 5 into R1 (Jump if condition test)
+MOVL R3, 0 @ moves 0 into R3
+MOVL R2, 6 @ moves 6 into R2
+JCC [R3], R1, R2 @ jumps to address in r3 if r1==r2, this test should fail
+.word 0x8119 @ adds 1 to the value in R1
+JCC [R3], R1, R2 @ jumps to address in r3 if r1==r2, this test should pass

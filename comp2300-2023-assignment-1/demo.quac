@@ -1,0 +1,7 @@
+MOVL R1, 10 @ (additional registers test)
+SMOV R5, R1
+MOVL R1, 11
+SMOV R6, R1
+MOVL R1, 12
+SMOV R7, R1
+NOP @ (catch so we don't fall off the edge of the program)
